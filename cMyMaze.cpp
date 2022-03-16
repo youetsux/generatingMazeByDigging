@@ -44,22 +44,22 @@ pair<int, int> cMyMaze::getInitPoint()
 
 void cMyMaze::digingWall()
 {
-	int px = m_InitPointList.front().first;
-	int py = m_InitPointList.front().second;
+	pair<int, int> tmp = m_InitPointList.front();
 
-	m_map.setMapDat(px, py, block::floor);
-	if (checkDigDir(m_InitPointList.front()).any() && m_map.isFloor(px, py))
+	m_map.setMapDat(tmp, block::floor);
+	if (checkDigDir(tmp).any() && m_map.isFloor(tmp))
 	{
-		Direction digdir = getDigDir(m_InitPointList.front());
+		Direction digdir = getDigDir(tmp);
 
 		using std::cout;
 		using std::endl;
 		//cout << "(x, y) : (" << m_InitPointList.back().first << ", " << m_InitPointList.back().second << ")[" << digdir << "]" << endl;
 
-		m_InitPointList.insert(m_InitPointList.begin(),{ px + 2 * (pdir.at(digdir).first),
-								    py + 2 * (pdir.at(digdir).second) });
-		m_map.setMapDat(px + pdir.at(digdir).first,
-			            py + pdir.at(digdir).second, block::floor);
+		m_InitPointList.insert(m_InitPointList.begin(),
+							  { tmp.first + 2 * (pdir.at(digdir).first),
+								tmp.second + 2 * (pdir.at(digdir).second) });
+		m_map.setMapDat({ tmp.first  + pdir.at(digdir).first,
+						  tmp.second + pdir.at(digdir).second }, block::floor );
 		digingWall();
 	}
 	else

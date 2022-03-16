@@ -30,12 +30,11 @@ public:
 	bool isFloor(int _x, int _y) const;
 	bool isWall(int _x, int _y) const;
 	void setMapDat(int _x, int _y, block _fw);
+	//pair<int, int>でアクセスできるようにオーバーロード
+	block getMapDat(pair<int, int> _point) const;
+	bool isFloor(pair<int, int> _point) const;
+	bool isWall(pair<int, int> _point) const;
+	void setMapDat(pair<int, int> _point, block _fw);
 	void printMap() const;
 };
-
-
-//std::random_device rnd;// 非決定的な乱数生成器を生成
-//std::mt19937 mt(rnd());//  メルセンヌ・ツイスタの32ビット版、引数は初期シード値
-//std::uniform_int_distribution<> rand100(0, 99);        // [0, 99] 範囲の一様乱数
-//0,99をメンバイニシャライザで初期化
 

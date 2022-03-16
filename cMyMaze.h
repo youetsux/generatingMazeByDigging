@@ -39,7 +39,6 @@ public:
 	cMyMaze(int _w, int _h)
 		:m_map(_w, _h), mt(rnd()),m_fDigDir("0000"){}
 	void digingWall();
-//	void digingWall(pair<int, int> _point);
 	void showMyMaze();
 
 	void printDigFlagBit() {
