@@ -114,28 +114,17 @@ Direction cMyMaze::getDigDir(pair<int, int> _point)
 {
 	bitset<4> res = checkDigDir(_point);
 	std::uniform_int_distribution<> r4(0, 3);
+	std::array<Direction, 5> Scase{ Direction::Up,
+									Direction::Right,
+									Direction::Down,
+									Direction::Left,
+									Direction::Error };
 	while (true)
 	{
 		int m = r4(mt);
 		if (res[m])
 		{
-			switch (m)
-			{
-			case 0:
-				return Direction::Up;
-				break;
-			case 1:
-				return Direction::Right;
-				break;
-			case 2:
-				return Direction::Down;
-				break;
-			case 3:
-				return Direction::Left;
-				break;
-			default:
-				return Direction::Error;
-			}
+			return Scase[m];
 		}
 	}
 }

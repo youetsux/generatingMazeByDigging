@@ -34,13 +34,15 @@ void cMap::printMapDat(block _fw) const
 
 bool cMap::isFloor(int _x, int _y) const
 {
-	if (getMapDat(_x, _y) == block::floor)return true;
+	if (getMapDat(_x, _y) == block::floor)
+		return true;
 	else
 		return false;
 }
 bool cMap::isWall(int _x, int _y) const
 {
-	if (getMapDat(_x, _y) == block::wall)return true;
+	if (getMapDat(_x, _y) == block::wall)
+		return true;
 	else
 		return false;
 }
@@ -51,14 +53,16 @@ block  cMap::getMapDat(pair<int, int> _point) const
 }
 bool  cMap::isFloor(pair<int, int> _point) const
 {
-	if (getMapDat(_point) == block::floor)return true;
+	if (getMapDat(_point) == block::floor)
+		return true;
 	else
 		return false;
 }
 
 bool  cMap::isWall(pair<int, int> _point) const
 {
-	if (getMapDat(_point) == block::wall)return true;
+	if (getMapDat(_point) == block::wall)
+		return true;
 	else
 		return false;
 }
