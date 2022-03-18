@@ -16,7 +16,6 @@ class cMap
 {
 private:
 	pair<int, int> m_size;
-	//first, second -> width, height
 	vector<block> m_map_dat;
 	void printMapDat(block _fw) const;
 public:

@@ -79,31 +79,31 @@ bitset<4> cMyMaze::checkDigDir(pair<int, int> _point)
 
 	//LDRU 3210
 	if (px == 1)
-		canDig.set(3, false);
+		canDig.set(Direction::Left, false);
 	else
 	{
-		canDig.set(3, m_map.isWall(px - 2, py));
+		canDig.set(Direction::Left, m_map.isWall(px - 2, py));
 	}
 
 	if (py == 1)
-		canDig.set(0, false);
+		canDig.set(Direction::Up, false);
 	else
 	{
-		canDig.set(0, m_map.isWall(px, py - 2));
+		canDig.set(Direction::Up, m_map.isWall(px, py - 2));
 	}
 	
 	if (px == m_map.getWidth() - 2)
-		canDig.set(1, false);
+		canDig.set(Direction::Right, false);
 	else
 	{
-		canDig.set(1, m_map.isWall(px + 2, py));
+		canDig.set(Direction::Right, m_map.isWall(px + 2, py));
 	}
 	
 	if (py == m_map.getHeight() - 2)
-		canDig.set(2, false);
+		canDig.set(Direction::Down, false);
 	else
 	{
-		canDig.set(2, m_map.isWall(px, py + 2));
+		canDig.set(Direction::Down, m_map.isWall(px, py + 2));
 	}
 	
 	return canDig;

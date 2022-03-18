@@ -9,9 +9,9 @@ using std::map;
 using std::bitset;
 
 enum Direction{
-	Up=0,Left=1,Down=2,Right=3,Error
+	Up=0,Right=1,Down=2,Left=3,Error
 };
-
+										      //•ûŒü‚Æƒrƒbƒg‡‚í‚¹‚È‚¢‚Æ‚¾‚ß‚©‚È
 const map<Direction, pair<int, int>> pdir = { {Direction::Up,   { 0,-1}},
 											  {Direction::Left, {-1, 0}},
 											  {Direction::Down, { 0, 1}},

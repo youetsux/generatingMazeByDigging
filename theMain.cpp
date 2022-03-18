@@ -2,7 +2,7 @@
 
 int main()
 {
-	cMyMaze m(25, 25);
+	cMyMaze m(7, 7);
 	
 	m.showMyMaze();
 
